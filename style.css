@@ -1,12 +1,19 @@
+html{
+  scroll-behavior: smooth;
+}
+
+
 body {
   margin: 0px;
+  font-family: 'Inter', sans-serif;
 }
+/* #region header */
 .header__top {
   display: flex;
   justify-content: space-between;
 }
 .header {
-  display: flex;
+  display: flex; 
   flex-direction: column;
   justify-content: space-between;
 
@@ -19,7 +26,8 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
+/* #endregion */
+/* #region main */
 .menu {
   display: flex;
   flex-direction: column;
@@ -29,28 +37,32 @@ body {
   height: 100vh;
   padding: 64px 120px;
 
-  background-color: #e8eff9;
+  background: #e8eff9;
 }
-.menu_icons {
+.menu_top {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 64px;
 }
-.menu_list {
-  list-style: none;
-  justify-content:flex-start;
-  padding-top: 30px;
-  padding-inline-start: 0px;
- }
- .menu_list li{
-  margin-bottom: 10px;
- }
+/* #endregion */
+/* #region nav */
 
- .menu_list li {
-  text-decoration: none; 
-  transition: text-decoration 0.3s; 
-  }
+.nav{
+  display: flex; /*выровнять по оси*/
+  flex-direction: column; /* Выровнять в колонку */
+  gap: 32px;
+}
 
-.menu_list li:hover {
-  text-decoration: underline; 
-  cursor: default;
+.nav__link{
+  color:#292929;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 22px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+/* #endregion */
+section {
+  height: 800px;
 }
