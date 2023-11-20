@@ -1,11 +1,10 @@
-html{
+html {
   scroll-behavior: smooth;
 }
 
-
 body {
   margin: 0px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 /* #region header */
 .header__top {
@@ -13,7 +12,8 @@ body {
   justify-content: space-between;
 }
 .header {
-  display: flex; 
+  /* display: none; */
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
 
@@ -27,11 +27,18 @@ body {
   background-size: cover;
 }
 /* #endregion */
-/* #region main */
+/* #region menu */
 .menu {
+  position: fixed; /* зробили його позиціюнювання "fixed", щоб воно було на екрані при скролі сторінки */
+  top: 0; /* вирівнюємо по верхньому лівому краю (початку координат)*/
+  right: 0; /* */
+  left: 0; /* */
+  transform: translateX(-100%); /* пересуваємо (ховаємо) його ліворуч */
+  transition: transform 500ms; /* робимо пересування плавним*/
+
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; 
+  justify-content: flex-start;
 
   box-sizing: border-box;
   height: 100vh;
@@ -39,6 +46,11 @@ body {
 
   background: #e8eff9;
 }
+
+.menu:target { /* працюємо з "menu" коли воно є активним (коли до нього посилаємось) */
+  transform: translateX(0%);
+}
+
 .menu_top {
   display: flex;
   justify-content: space-between;
@@ -47,14 +59,14 @@ body {
 /* #endregion */
 /* #region nav */
 
-.nav{
+.nav {
   display: flex; /*выровнять по оси*/
   flex-direction: column; /* Выровнять в колонку */
   gap: 32px;
 }
 
-.nav__link{
-  color:#292929;
+.nav__link {
+  color: #292929;
   text-decoration: none;
   font-weight: bold;
   font-size: 22px;
@@ -63,6 +75,23 @@ body {
   letter-spacing: 2px;
 }
 /* #endregion */
-section {
-  height: 800px;
+
+/* #region main */
+.recommended__title{
+  margin-top: 0;
+  margin-bottom: 64px;
+  font-size: 48px;
+  line-height: 100%;
+  font-weight: bold;
+  color: #292929;
+
+text-align: center;
+letter-spacing: -1.5px;
 }
+.main{
+  padding: 120px;
+}
+
+
+
+/* endregion */
